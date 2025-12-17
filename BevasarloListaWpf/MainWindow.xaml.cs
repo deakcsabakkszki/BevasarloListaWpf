@@ -162,5 +162,11 @@ namespace BevasarloListaWpf
             dataGrid.ItemsSource = termekek.GroupBy(t => new { Nev = t.Nev, Kategoria = t.Kategória })
                 .Select(x => new { TermekNev = x.Key.Nev, Kategoria = x.Key.Kategoria, Darab = x.Count() });
         }
+
+
+        private void LegertekesebbTipusonkent(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.GroupBy(item=>item.Kategória).Select(x=> new {Kategoria=x.Key, Ar = x.Max( s=>s.Ár)  });
+        }
     }
 }
