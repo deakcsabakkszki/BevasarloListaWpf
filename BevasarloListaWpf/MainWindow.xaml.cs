@@ -62,7 +62,7 @@ namespace BevasarloListaWpf
 
         private void torles(object sender, RoutedEventArgs e)
         {
-            if (dataGrid.SelectedItem!=null)
+            if (dataGrid.SelectedItem!=null&&dataGrid.SelectedItem is ItemModel)
             {
                 termekek.Remove((ItemModel)dataGrid.SelectedItem);
                 dataGrid.ItemsSource = termekek;
@@ -79,5 +79,10 @@ namespace BevasarloListaWpf
         {
             dataGrid.ItemsSource = termekek.OrderByDescending(t => t.Összesen).Take(5);
         }
+        private void tobbMint1(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.Where(t=>t.Mennyiség>1).Select(k=>new {Nev=k.Nev,Összeg=k.Összesen});
+        }
+
     }
 }

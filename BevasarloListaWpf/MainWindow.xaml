@@ -19,6 +19,7 @@
                     <Button Content="Törlés" Width="150" Margin="5" Click="torles"/>
                     <Button Content="A típus 3 legdrágább" Width="150" Margin="5" Click="aTipus3Draga"/>
                     <Button Content="Top 5 összérték szerint" Width="150" Margin="5" Click="Top5Osszerint"/>
+                    <Button Content="Mennyiség nagyobb mint 1" Width="150" Margin="5" Click="tobbMint1"/>
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>
