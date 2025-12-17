@@ -173,5 +173,19 @@ namespace BevasarloListaWpf
         {
             dataGrid.ItemsSource = termekek.GroupBy(f => f.Kategória).Select(g => new { Kategoria = g.Key, Darab = g.Sum(q => q.Mennyiség) });
         }
+
+        private void nullaFt(object sender, RoutedEventArgs e)
+        {
+            var nullaFtosTermek = termekek.Any(x => x.Ár == 0);
+
+            if (nullaFtosTermek == false)
+            {
+                MessageBox.Show("Nincs nulla Ft-os termék.");
+            }
+            else
+            {
+                MessageBox.Show("Van nulla Ft-os termék.");
+            }
+        }
     }
 }
