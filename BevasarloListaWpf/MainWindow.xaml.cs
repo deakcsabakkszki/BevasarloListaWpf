@@ -120,5 +120,15 @@ namespace BevasarloListaWpf
                     Átlagár = Math.Round(g.Average(t => t.Ár),2)
                 });
         }
+
+        private void highestTotalByCategoryBtn(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.GroupBy(t => t.Kategória).Select(
+                g => new
+                {
+                    Kategória = g.Key,
+                    Összérték = g.Max(g => g.Összesen)
+                });
+        }
     }
 }
