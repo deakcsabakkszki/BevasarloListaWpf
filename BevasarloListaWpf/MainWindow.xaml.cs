@@ -59,5 +59,15 @@ namespace BevasarloListaWpf
             }
 
         }
+
+        private void torles(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem!=null)
+            {
+                termekek.Remove((ItemModel)dataGrid.SelectedItem);
+                dataGrid.ItemsSource = termekek;
+                dataGrid.Items.Refresh();
+            }
+        }
     }
 }
