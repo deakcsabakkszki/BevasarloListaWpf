@@ -110,5 +110,15 @@ namespace BevasarloListaWpf
                 .GroupBy(g => g.Kategória)
                 .Select(g => new {Típus = g.Key, Darab = g.Sum(t => t.Mennyiség), Összesen = g.Sum(t => t.Összesen) });
         }
+
+        private void tipusAtlagar(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.GroupBy(t => t.Kategória)
+                .Select(g => new
+                {
+                    Kategória = g.Key,
+                    Átlagár = Math.Round(g.Average(t => t.Ár),2)
+                });
+        }
     }
 }
