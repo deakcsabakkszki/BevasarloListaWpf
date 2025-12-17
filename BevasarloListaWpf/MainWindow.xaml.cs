@@ -11,14 +11,40 @@ using System.Windows.Shapes;
 
 namespace BevasarloListaWpf
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    public class ItemModel
+    {
+        public String Nev {  get; set; }
+        public int Mennyiség {  get; set; }
+        public int Ár {  get; set; }
+        public String Kategória {  get; set; }
+
+        public int Összesen {  get; set; }
+        public ItemModel(string nev, int mennyiség, int ár, string kategória)
+        {
+            Nev = nev;
+            Mennyiség = mennyiség;
+            Ár = ár;
+            Kategória = kategória;
+            Összesen = Mennyiség * Ár;
+        }
+    }
     public partial class MainWindow : Window
     {
+        List<ItemModel> termekek=new List<ItemModel>();
         public MainWindow()
         {
             InitializeComponent();
+            termekek.Add(new ItemModel("Tej", 5, 450, "A"));
+            termekek.Add(new ItemModel("Kenyer", 10, 350, "B"));
+            termekek.Add(new ItemModel("Sajt", 2, 1200, "A"));
+            termekek.Add(new ItemModel("Alma", 20, 200, "C"));
+            termekek.Add(new ItemModel("Narancs", 15, 300, "C"));
+            termekek.Add(new ItemModel("Hús", 3, 2500, "D"));
+            termekek.Add(new ItemModel("Csokoládé", 7, 900, "B"));
+            termekek.Add(new ItemModel("Kenyér", 1, 450, "B"));
+            termekek.Add(new ItemModel("Tej", 12, 400, "A"));
+            termekek.Add(new ItemModel("Sajt", 5, 1500, "D"));
+            dataGrid.ItemsSource = termekek;
         }
     }
 }
