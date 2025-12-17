@@ -237,5 +237,28 @@ namespace BevasarloListaWpf
                 priceProgressBar.Value = selectedItem.Ár;
             }
         }
+
+        private void nemc(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.Where(t => t.Kategória != "C");
+        }
+        
+        private void nevHosszSzerint(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.OrderBy(x=>x.Nev.Length);
+        }
+
+        private void aTipusOsszAr(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek
+                .Where(t => t.Kategória == "A")
+                .OrderBy(t => t.Nev)
+                .Select(t => new
+                {
+                    Kategória = t.Kategória,
+                    Név = t.Nev,
+                    Összes = t.Összesen
+                });
+        }
     }
 }
