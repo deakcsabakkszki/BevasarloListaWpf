@@ -103,5 +103,12 @@ namespace BevasarloListaWpf
             dataGrid.ItemsSource = termekek.OrderBy(x => x.Nev)
                 .Select(g => new { g.Nev, g.Összesen });
         }
+
+        private void darabEsOsszertek(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.OrderBy(x => x.Nev)
+                .GroupBy(g => g.Kategória)
+                .Select(g => new {Típus = g.Key, Darab = g.Sum(t => t.Mennyiség), Összesen = g.Sum(t => t.Összesen) });
+        }
     }
 }
