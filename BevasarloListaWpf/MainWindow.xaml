@@ -11,7 +11,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" x:Name="dataGrid" ColumnWidth="*" ></DataGrid>
+        <DataGrid Grid.Row="0" x:Name="dataGrid" ColumnWidth="*" SelectionChanged="dataGrid_SelectionChanged" ></DataGrid>
         <ScrollViewer Grid.Row="1">
             <GroupBox Header="Termekek" Margin="10">
                 <WrapPanel Margin="5">
@@ -39,6 +39,7 @@
                     <Button Content="Megegyező ár" Width="150" Margin="5" Click="egyezoAr" />
                     <TextBox x:Name="textBox" Width="150" Margin="5" TextChanged="Valtozas"></TextBox>
                     <Button Content="Egyező termékek" Width="150" Margin="5" Click="egyezo"/>
+                    <ProgressBar x:Name="priceProgressBar" Width="100" Height="20" Margin="10" Value="0"/>
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>

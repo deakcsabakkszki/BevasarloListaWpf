@@ -47,6 +47,8 @@ namespace BevasarloListaWpf
             termekek.Add(new ItemModel("Tej", 12, 400, "A"));
             termekek.Add(new ItemModel("Sajt", 5, 1500, "D"));
             dataGrid.ItemsSource = termekek;
+            priceProgressBar.Minimum = termekek.Min(x => x.Ár);
+            priceProgressBar.Maximum = termekek.Max(x => x.Ár);
         }
 
         private void hozza_adas(object sender, RoutedEventArgs e)
@@ -58,6 +60,8 @@ namespace BevasarloListaWpf
                 termekek.Add(ujtermek.ujtermek);
                 dataGrid.ItemsSource = termekek;
                 dataGrid.Items.Refresh();
+                priceProgressBar.Minimum = termekek.Min(x => x.Ár);
+                priceProgressBar.Maximum = termekek.Max(x => x.Ár);
             }
 
         }
@@ -69,6 +73,8 @@ namespace BevasarloListaWpf
                 termekek.Remove((ItemModel)dataGrid.SelectedItem);
                 dataGrid.ItemsSource = termekek;
                 dataGrid.Items.Refresh();
+                priceProgressBar.Minimum = termekek.Min(x => x.Ár);
+                priceProgressBar.Maximum = termekek.Max(x => x.Ár);
             }
         }
 
@@ -221,6 +227,15 @@ namespace BevasarloListaWpf
                 .GroupBy(t => t.Nev)
                 .Where(t => t.Count() > 1)
                 .SelectMany(t => t);
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dataGrid.SelectedItem is ItemModel selectedItem)
+            {
+
+                priceProgressBar.Value = selectedItem.Ár;
+            }
         }
     }
 }
