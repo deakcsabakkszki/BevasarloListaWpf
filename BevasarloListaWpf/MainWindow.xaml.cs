@@ -83,6 +83,19 @@ namespace BevasarloListaWpf
         {
             dataGrid.ItemsSource = termekek.Where(t=>t.Mennyiség>1).Select(k=>new {Nev=k.Nev,Összeg=k.Összesen});
         }
+        private void reset(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek;
+        }
 
+        private void csokken(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.OrderByDescending(x => x.Ár);
+        }
+
+        private void dTipus500felett(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.Where(t => t.Kategória == "D" && t.Ár > 500);
+        }
     }
 }
