@@ -15,7 +15,7 @@
         <ScrollViewer Grid.Row="1">
             <GroupBox Header="Termekek" Margin="10">
                 <WrapPanel Margin="5">
-                    <Button Content="Hozzáadás" Width="150" Margin="5"/>
+                    <Button Content="Hozzáadás" Width="150" Margin="5" Click="hozza_adas"/>
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>
