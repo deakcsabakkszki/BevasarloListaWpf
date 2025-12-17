@@ -43,7 +43,7 @@ namespace BevasarloListaWpf
             termekek.Add(new ItemModel("Narancs", 15, 300, "C"));
             termekek.Add(new ItemModel("Hús", 3, 2500, "D"));
             termekek.Add(new ItemModel("Csokoládé", 7, 900, "B"));
-            termekek.Add(new ItemModel("Kenyér", 1, 450, "B"));
+            termekek.Add(new ItemModel("Kenyer", 1, 450, "B"));
             termekek.Add(new ItemModel("Tej", 12, 400, "A"));
             termekek.Add(new ItemModel("Sajt", 5, 1500, "D"));
             dataGrid.ItemsSource = termekek;
@@ -186,6 +186,11 @@ namespace BevasarloListaWpf
             {
                 MessageBox.Show("Van nulla Ft-os termék.");
             }
+        }
+
+        private void kenyerek(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.Where(x => x.Nev.Contains("Kenyer")).OrderByDescending(c=>c.Ár);
         }
     }
 }

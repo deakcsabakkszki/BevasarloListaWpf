@@ -35,6 +35,7 @@
                     <Button Content="Legértékesebb termék tipusonként + típus" Width="150" Margin="5" Click="LegertekesebbTipusonkent"/>
                     <Button Content="Összesített darabszám típusonként" Width="150" Margin="5" Click="OsszesitettDbTipusonkent"/>
                     <Button Content="Van 0ft-os termék?" Width="150" Margin="5" Click="nullaFt"/>
+                    <Button Content="Csak kenyerek" Width="150" Margin="5" Click="kenyerek"/>
                     
                 </WrapPanel>
             </GroupBox>
