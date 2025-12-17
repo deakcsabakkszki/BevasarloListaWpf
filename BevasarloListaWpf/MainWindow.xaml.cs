@@ -145,7 +145,14 @@ namespace BevasarloListaWpf
 
         private void kevesebbMint10esKisebb1000(object sender, RoutedEventArgs e)
         {
-            dataGrid.ItemsSource = termekek.Where(t => t.Mennyiség > 10 && t.Ár < 1000).OrderBy(t => t.Ár);
+            dataGrid.ItemsSource = termekek
+                .Where(t => t.Mennyiség > 10 && t.Ár < 1000)
+                .OrderBy(t => t.Ár);
+        }
+
+        private void OsszN2000ABC(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.Where(x => x.Összesen > 2000).OrderBy(x => x.Nev);
         }
     }
 }
