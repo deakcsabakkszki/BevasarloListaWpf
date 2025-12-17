@@ -28,6 +28,9 @@
                     <Button Content="Típus átlagár" Width="150" Margin="5" Click="tipusAtlagar"/>
                     <Button Content="Legnagyobb összérték kategóriánként" Width="150" Margin="5" Click="highestTotalByCategoryBtn"/>
                     <Button Content="B+C típus, 1000Ft kisebb" Width="150" Margin="5" Click="bcEzerKisebb"/>
+                    <Button Content="500Ft felett, csoport szerint" Width="150" Margin="5" Click="felett500csoport"/>
+                    <Button Content="> 10 db és kisebb 1000 Ft" Width="150" Margin="5" Click="kevesebbMint10esKisebb1000"/>
+                    
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>
