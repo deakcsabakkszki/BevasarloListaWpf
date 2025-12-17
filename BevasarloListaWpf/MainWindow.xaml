@@ -31,6 +31,7 @@
                     <Button Content="500Ft felett, csoport szerint" Width="150" Margin="5" Click="felett500csoport"/>
                     <Button Content="> 10 db és kisebb 1000 Ft" Width="150" Margin="5" Click="kevesebbMint10esKisebb1000"/>
                     <Button Content="> Összérték nagyobb 2000Ft ABC" Width="150" Margin="5" Click="OsszN2000ABC"/>
+                    <Button Content="Terméknév + típus" Width="150" Margin="5" Click="termeknevTipusCsoportositas"/>
                     
                 </WrapPanel>
             </GroupBox>
