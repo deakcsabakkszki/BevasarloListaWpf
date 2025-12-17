@@ -23,6 +23,7 @@
                     <Button Content="Mennyiség nagyobb mint 1" Width="150" Margin="5" Click="tobbMint1"/>
                     <Button Content="Ár szerint csökkenő" Width="150" Margin="5" Click="csokken"/>
                     <Button Content="Minden D típus > 500" Width="150" Margin="5" Click="dTipus500felett"/>
+                    <Button Content="Név + összérték ABC" Width="150" Margin="5" Click="nevOsszABC" />
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>

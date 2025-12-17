@@ -97,5 +97,11 @@ namespace BevasarloListaWpf
         {
             dataGrid.ItemsSource = termekek.Where(t => t.Kategória == "D" && t.Ár > 500);
         }
+
+        private void nevOsszABC(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.OrderBy(x => x.Nev)
+                .Select(g => new { g.Nev, g.Összesen });
+        }
     }
 }
