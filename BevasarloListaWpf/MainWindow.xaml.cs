@@ -168,5 +168,10 @@ namespace BevasarloListaWpf
         {
             dataGrid.ItemsSource = termekek.GroupBy(item=>item.Kategória).Select(x=> new {Kategoria=x.Key, Ar = x.Max( s=>s.Ár)  });
         }
+
+        private void OsszesitettDbTipusonkent(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = termekek.GroupBy(f => f.Kategória).Select(g => new { Kategoria = g.Key, Darab = g.Sum(q => q.Mennyiség) });
+        }
     }
 }
