@@ -30,6 +30,7 @@
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
             <Button Content="Ok" Width="60" Height="25" Margin="10" Click="ok" />
             <Button Content="Mégse" Width="60" Height="25" Margin="10" Click="Button_Click"/>
+            
         </StackPanel>
     </Grid>
 </Window>
