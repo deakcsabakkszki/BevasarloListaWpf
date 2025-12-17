@@ -130,5 +130,9 @@ namespace BevasarloListaWpf
                     Összérték = g.Max(g => g.Összesen)
                 });
         }
+
+        private void bcEzerKisebb(object sender, RoutedEventArgs e) {
+            dataGrid.ItemsSource = termekek.Where(t => (t.Kategória == "B" || t.Kategória == "C") && t.Ár < 1000);
+        }
     }
 }

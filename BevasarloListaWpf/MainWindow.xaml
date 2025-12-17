@@ -27,6 +27,7 @@
                     <Button Content="Típus db + összérték" Width="150" Margin="5" Click="darabEsOsszertek" />
                     <Button Content="Típus átlagár" Width="150" Margin="5" Click="tipusAtlagar"/>
                     <Button Content="Legnagyobb összérték kategóriánként" Width="150" Margin="5" Click="highestTotalByCategoryBtn"/>
+                    <Button Content="B+C típus, 1000Ft kisebb" Width="150" Margin="5" Click="bcEzerKisebb"/>
                 </WrapPanel>
             </GroupBox>
         </ScrollViewer>
